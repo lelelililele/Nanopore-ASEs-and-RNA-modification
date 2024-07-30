@@ -1,6 +1,6 @@
 ~/.conda/envs/TAGET/bin/R
 
-#file:/share2/Software/liyifei_library/MatrixEQTL/data
+#file:/share2/MatrixEQTL/data
 
 library("MatrixEQTL")
 
