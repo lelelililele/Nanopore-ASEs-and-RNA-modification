@@ -1,4 +1,4 @@
-# Nanopore-ASEs-and-RNA-modification
+# Nanopore RNA modifications and alternative splicing
 The script was used to obtain regulation pairs between differential RNA modifications and aberrant alternative splicing events.
 ## Step1: Obtain differential RNA modifications
 
