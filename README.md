@@ -20,3 +20,19 @@ In this process, [SUPPA2](https://github.com/comprna/SUPPA) was used.
 >
 > suppa.py diffSplice --method empirical --input genecodev35_merged.all.events.ioe --psi Nanocount_IDtpm5sample_T.psi Nanocount_IDtpm5sample_N.psi --tpm Nanocount_IDtpm5sample_T Nanocount_IDtpm5sample_N --area 1000 --lower-bound 0.05 -gc -o Suppa2_diffSplice  
 >
+**************************************************************************************
+## Step3: Convert modification rate matrix into integer matrix
+According to the percentile rank of modification rate, convert matrix into integer matrix.  
+
+> awk 'BEGIN{FS=OFS="\t"}{max = 0}{for(i = 1; i <= 10; i++) if($i > max) max = $i;print $0,$11=max}' diffmod_data > diffmod_data1  
+> 
+> awk 'BEGIN{FS=OFS="\t"}{min = 999999999}{for(i = 1; i <= 10; i++) if($i < min) min = $i; print $0,$12=min,$13=($11-$12)/3+$12,$14=($11-$12)*2/3+$12}' diffmod_data1 > diffmod_data2  
+> 
+> awk 'BEGIN{FS=OFS="\t"}{for(i = 1; i <= 10; i++) if($i < $13) $(i+14)=0; else if ($i > $14) $(i+14)=2;  else $(i+14)=1}{print $0}'  diffmod_data2 > diffmod_data3  
+>
+**************************************************************************************
+## Step4: Convert modification rate matrix into integer matrix
+By [MatrixEQTL](https://github.com/andreyshabalin/MatrixEQTL), integrated RNA modifications with alternative splicing events to explore relationship pairs.
+
+> Step4_relation_pairs.R
+
