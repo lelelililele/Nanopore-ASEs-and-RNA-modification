@@ -36,3 +36,7 @@ By [MatrixEQTL](https://github.com/andreyshabalin/MatrixEQTL), integrated RNA mo
 
 > Step4_relation_pairs.R
 
+**************************************************************************************
+
+Please cited:
+Zhang, L., Cui, J., Shi, J., Cai, J., Sun, T., Sun, G., Li, Y., Li, H., Xu, S., Tang, X. et al. (2026) Exon skipping as a potential diagnostic biomarker in colorectal cancer: an integrated epigenomic-transcriptomic analysis. Human genomics.
